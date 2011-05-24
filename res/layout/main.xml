@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent">
+	<android.gesture.GestureOverlayView
+		android:id="@+id/gestures"
+		android:layout_width="fill_parent" 
+		android:layout_height="fill_parent" 
+		android:layout_weight="1.0"
+		android:gestureColor="#AA000000">
+		<ImageView 
+			android:layout_gravity="center_vertical" 
+			android:id="@+id/ImageView" 
+			android:layout_width="fill_parent" 
+			android:layout_height="fill_parent" 
+		/>
+		<Button
+			android:id="@+id/button_select_date"
+	        android:layout_width="wrap_content" 
+	        android:layout_height="wrap_content" 
+	        android:layout_gravity="center_horizontal|top"
+	        android:padding="12dip"
+	        android:background="#AA000000"
+	        android:textColor="#ffffffff"
+	        android:text="Feb 10, 2011"
+	        android:onClick="onButtonSelectDateClick"
+	    />
+	</android.gesture.GestureOverlayView>
+</FrameLayout>
