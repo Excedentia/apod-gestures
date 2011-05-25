@@ -22,7 +22,6 @@
 	        android:background="#AA000000"
 	        android:textColor="#ffffffff"
 	        android:text="Feb 10, 2011"
-	        android:onClick="onButtonSelectDateClick"
 	    />
 	</android.gesture.GestureOverlayView>
 </FrameLayout>

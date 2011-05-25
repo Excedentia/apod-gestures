@@ -64,7 +64,7 @@ public class ApodGestures extends Activity implements
 	}
 
 	private String formatDate(Date date) {
-		return new SimpleDateFormat("dd MMM yyyy").format(date);
+		return new SimpleDateFormat("MMM dd, yyyy").format(date);
 	}
 
 	private void refreshActivity() {
@@ -72,7 +72,7 @@ public class ApodGestures extends Activity implements
 		buttonDate.setText(formatDate(mApodModel.getCalendar().getTime()));
 
 		ImageView imageView = (ImageView) findViewById(R.id.ImageView);
-		mImageDownloader.download(mApodModel.getImageURL(), imageView);
+		mImageDownloader.download(imageView);
 	}
 
 	public void showNextDay() {

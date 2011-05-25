@@ -22,13 +22,15 @@ import android.widget.ImageView;
  */
 
 public class ImageDownloader {
-	public void download(String url, ImageView imageView) {
+	private ApodModel mApodModel = ApodModel.getInstance();
+	
+	public void download(ImageView imageView) {
 		BitmapDownloaderTask task = new BitmapDownloaderTask(imageView);
-		task.execute(url);
+		task.execute(mApodModel);
 	}
 }
 
-class BitmapDownloaderTask extends AsyncTask<String, Void, Bitmap> {
+class BitmapDownloaderTask extends AsyncTask<ApodModel, Void, Bitmap> {
 	private static final String LOG_TAG = "ImageDownloader";
 	
 	private ProgressDialog mProgressDlg;
@@ -86,9 +88,9 @@ class BitmapDownloaderTask extends AsyncTask<String, Void, Bitmap> {
 	}
 
 	@Override
-	protected Bitmap doInBackground(String... params) {
+	protected Bitmap doInBackground(ApodModel... params) {
 		// params comes from the execute() call: params[0] is the url.
-		mBitmap = downloadBitmap(params[0]);
+		mBitmap = downloadBitmap(params[0].getImageURL());
 		return mBitmap;
 	}
 

@@ -1,13 +1,10 @@
 package com.pyjioh.core;
 
-import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.apache.http.client.ClientProtocolException;
 
 public class ApodModel {
 	private static final String APOD_NASA_URL = "http://apod.nasa.gov/apod/";
@@ -41,15 +38,7 @@ public class ApodModel {
 	public String getImageURL() {
 		String imageLink = "";
 		String websiteSource = "";
-		try {
-			websiteSource = WebManager.getPageSource(getApodURL());
-		} catch (ClientProtocolException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		websiteSource = WebManager.getPageSource(getApodURL());
 		Pattern pattern = Pattern.compile(GET_IMAGE_REGEXP);
 		Matcher matcher = pattern.matcher(websiteSource.toString());
 		if (matcher.find())
