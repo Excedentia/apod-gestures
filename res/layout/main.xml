@@ -15,13 +15,13 @@
 		/>
 		<Button
 			android:id="@+id/button_select_date"
-	        android:layout_width="wrap_content" 
-	        android:layout_height="wrap_content" 
-	        android:layout_gravity="center_horizontal|top"
-	        android:padding="12dip"
-	        android:background="#AA000000"
-	        android:textColor="#ffffffff"
-	        android:text="Feb 10, 2011"
-	    />
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" 
+			android:layout_gravity="center_horizontal|top"
+			android:padding="12dip"
+			android:background="#AA000000"
+			android:textColor="#ffffffff"
+			android:text="Feb 10, 2011"
+		/>
 	</android.gesture.GestureOverlayView>
 </FrameLayout>
